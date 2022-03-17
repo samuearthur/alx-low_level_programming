@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
   * _isdigit - Check if a character is a digit
@@ -15,4 +15,3 @@ int _isdigit(int x)
 
 	return (0);
 }
-
