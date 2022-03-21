@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include <stdio.h>
 
 /**
   * _puts - Prints a string
@@ -15,4 +15,3 @@ void _puts(char *str)
 
 	_putchar('\n');
 }
-
