@@ -1,46 +1,46 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
- * infinite_add - add two string numbers
- * @n1: string number to add to n2
- * @n2: string number to add to n1
- * @r: buffer to store the sum
- * @size_r: size of buffer
- * return: pointer to sum or 0 if it does not fit in r
+ * print_number -  checks for checks for a digit (0 through 9).
+ * @n: n -  Variable
+ * Return: Always 0.
  */
-char *infinite_add(char *n1, char *n2, char *r, int size_r)
+void print_number(int n)
 {
-	int i, j, k, l, m, n;
+	unsigned int z;
+	int m, b;
 
-	for (i = 0; n1[i]; i++)
-		;
-	for (j = 0; n2[j]; j++)
-		;
-	if (i > size_r || j > size_r)
-		return (0);
-	m = 0;
-	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
+	b = 10;
+
+	if (n < 10 && n >= 0)
 	{
-		n = m;
-		if (i >= 0)
-			n += n1[i] - '0';
-		if (j >= 0)
-			n += n2[j] - '0';
-		if (i < 0 && j < 0 && n == 0)
+		_putchar (n + '0');
+	}
+	else if (n > -10 && n < 0)
+	{
+		n = n - 2 * n;
+		_putchar('-');
+		_putchar (n + '0');
+	}
+
+	else
+	{
+		if (n < 0)
 		{
-			break;
+			n = n * -1;
+			_putchar ('-');
 		}
-		m = n / 10;
-		r[k] = n % 10 + '0';
-	}
-	r[k] = '\0';
-	if (i >= 0 || j >= 0 || m)
-		return (0);
-	for (k -= 1, l = 0; l < k; k--, l++)
+		z = n;
+	while (z / b > 9)
 	{
-		m = r[k];
-		r[k] = r[l];
-		r[l] = m;
+		b = b * 10;
 	}
-	return (r);
+	while (b > 0)
+	{
+		m = z / b;
+		z = z % b;
+		_putchar (m + '0');
+		b = b / 10;
+	}
+	}
 }
