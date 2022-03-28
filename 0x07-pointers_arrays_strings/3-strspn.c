@@ -1,5 +1,5 @@
-#include "holberton.h"
-
+#include "main.h"
+#include <stdio.h>
 /**
  * _strspn - gets lengthof a prefix substring
  * @s: string to check
